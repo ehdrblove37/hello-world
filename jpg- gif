@@ -1,0 +1,23 @@
+<img id=girlImage style=width:100%;cursor:pointer;display:block>
+<script>
+img_1 = "https://blog.kakaocdn.net/dn/byWCWi/btrxgoaaE0s/iCoandRMMG4BBSoKfRJET1/img.jpg";
+img_2 = "https://blog.kakaocdn.net/dn/bqCq3R/btrxbOaDRoR/Z9qUK8qphOtu4tUQeOOGT0/img.jpg";
+img_3 = "https://blog.kakaocdn.net/dn/C2qHV/btrxbO2KeNb/ibogM4n1owSTkQQfKNrEVK/img.jpg";
+img_4 = "https://blog.kakaocdn.net/dn/ckeKFH/btrxc3dLU0G/4SkWGnLbjUenY7zOVJGcEk/img.jpg";
+img_5 = "https://blog.kakaocdn.net/dn/cgpJOZ/btrxgnvyG7z/eGijs0LBJpKCCO67uq6Ugk/img.jpg";
+img_6 = "https://blog.kakaocdn.net/dn/ckZx7K/btrxc3LC6aM/AJmmkDVCkfKoC0CMN4Q03k/img.jpg";
+img_7 = "https://blog.kakaocdn.net/dn/5ggf6/btrxc1NSCHt/x0JKXRJtXsxdSKqJVflzW1/img.jpg";
+img_8 = "https://blog.kakaocdn.net/dn/CZ47w/btrxb9yM93c/86C76OjqS6RayVb2ZbIX91/img.jpg";
+img_9 = "https://blog.kakaocdn.net/dn/cerMQR/btrxgoH1ZM5/7W0GzRJsBKFZKcMecrFbo0/img.jpg";
+img_10 = "https://blog.kakaocdn.net/dn/sRuEq/btrxdO1N3ks/xbVuq3XhSm7PSrDKPmWTwk/img.jpg";
+for (imgTotal = 0; this["img_" + (imgTotal + 1)]; imgTotal++);
+goMode = onMode = num = 1;
+girlImage.src = this["img_" + num];
+setInterval(function() {
+    girlImage.src = onMode ? this["img_" + (goMode ? ++num : --num)] : this["img_" + num]; 
+    if (num == 1 || num == imgTotal) goMode = !goMode;
+}, 40);
+girlImage.onclick = function() {
+    onMode = !onMode;
+}
+</script>
